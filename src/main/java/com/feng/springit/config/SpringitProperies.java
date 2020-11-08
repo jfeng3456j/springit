@@ -14,7 +14,7 @@ public class SpringitProperies {
         return welcomeMsg;
     }
 
-    public void setwelcomeMsg(String welcomeMsg) {
+    public void setWelcomeMsg(String welcomeMsg) {
         this.welcomeMsg = welcomeMsg;
     }
 }
