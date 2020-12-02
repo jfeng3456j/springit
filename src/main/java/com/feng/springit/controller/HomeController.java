@@ -13,7 +13,7 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("title", "index page");
-        return "index";
+        return "/link/index";
     }
 
     @GetMapping("/home") //set up the route in the application

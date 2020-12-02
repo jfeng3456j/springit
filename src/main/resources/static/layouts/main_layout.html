@@ -1,33 +1,24 @@
-<!--https://www.onlinetutorialspoint.com/spring-boot/how-to-set-spring-boot-favicon-image.html-->
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Springit - Spring Boot Reddit Clone</title>
-
+    <title th:text="${title}">Springit - Spring Boot Reddit Clone</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" th:href="@{/libs/bootstrap/css/bootstrap.min.css}"/>
     <!-- Custom styles for this template -->
-    <link href="/css/springit.css" rel="stylesheet">
-
+    <link rel="stylesheet" th:href="@{/css/springit.css}">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Roboto" >
     <!-- Font Awesome (for icons) -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-spring fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-spring fixed-top" th:fragment="navigation">
     <div class="container">
         <a class="navbar-brand" href="/">
             <i class="fa fa-leaf" aria-hidden="true"></i>
@@ -47,11 +38,11 @@
 
                 <!-- if user is signed in -->
                 <li class="nav-item">
-                    <a class="nav-link" href="submit.html">
+                    <a class="nav-link" th:href="@{/link/submit}">
                         <i class="fa fa-link" aria-hidden="true"></i> Submit Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.html">
+                    <a class="nav-link" href="../auth/profile.html">
                         <i class="fa fa-user" aria-hidden="true"></i> Account</a>
                 </li>
                 <li class="nav-item">
@@ -61,11 +52,11 @@
 
                 <!-- if user is not signed in -->
                 <li class="nav-item">
-                    <a class="nav-link" href=login.html>
+                    <a class="nav-link" href=../auth/login.html>
                         <i class="fa fa-sign-in-alt" aria-hidden="true"></i> Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.html">
+                    <a class="nav-link" href="../auth/register.html">
                         <i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
                 </li>
             </ul>
@@ -73,7 +64,7 @@
     </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" th:fragment="jumbotron">
     <div class="container" align="center">
         <h2 class="display-4">Spring Boot Reddit Clone</h2>
         <p class="lead">This is a reddit clone built using <a href="#">Spring Boot 2</a>, <a href="#"></a>Spring Framework 5</a> & so many other great projects! If you would like to learn how to build this
@@ -83,37 +74,9 @@
     </div>
 </div>
 
-<div class="container">
-
-    <!-- links -->
-    <div class="row link">
-        <div class="col-1">
-            <div><a href="#" class="upvote"><i class="fas fa-arrow-up"></i></a></div>
-            <div><span class="votecount">3</span></div>
-            <div><a href="#" class="downvote"><i class="fas fa-arrow-down"></i></a></div>
-        </div>
-        <div class="col-11">
-            <p class="title">
-                <a class="title " href="http://therealdanvega.com/blog/2018/03/01/what-is-new-spring-boot-2" target="_blank">
-                    What's new in Spring Boot 2?
-                </a>
-                <span class="domain">(<a href="http://therealdanvega.com">therealdanvega.com</a>)</span>
-            </p>
-            <p class="tagline ">submitted
-                <time title="Sat Mar 10 06:26:36 2018 UTC" datetime="2018-03-10T06:26:36+00:00" class="live-timestamp">2 hours ago</time> by
-                <a href="profile.html" class="author">therealdanvega</a>
-            </p>
-            <p>
-                <a href="link.html" class="comments"><i class="fas fa-comments"></i> 8 comments</a>
-                <a href="#" class="share"><i class="fas fa-share-square"></i> share</a>
-            </p>
-        </div>
-    </div>
-
+<div class="container" th:fragment="content">
+    <p>This is your main content</p>
 </div>
 
 </body>
-
 </html>
-
-
