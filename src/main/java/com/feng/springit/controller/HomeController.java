@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping("/sampleIndex")
     public String index(Model model) {
         model.addAttribute("title", "index page");
         return "/link/index";
     }
 
-    @GetMapping("/home") //set up the route in the application
+    @GetMapping("/sampleHome") //set up the route in the application
     public String home(Model model) {
         model.addAttribute("title", "home page");
         return "home";
