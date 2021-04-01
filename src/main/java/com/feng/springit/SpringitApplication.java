@@ -17,9 +17,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+//@EnableJpaAuditing
 @SpringBootApplication
 @EnableConfigurationProperties(SpringitProperies.class)
-@EnableJpaAuditing
 public class SpringitApplication {
 
 	//https://www.danvega.dev/docs/spring-boot-2-docs/#_course_details
