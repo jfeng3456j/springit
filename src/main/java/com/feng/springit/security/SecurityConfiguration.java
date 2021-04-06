@@ -38,7 +38,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .and()
-                .rememberMe();
+                .rememberMe()
+                .and()
+                .csrf().disable()
+                .headers().frameOptions().disable();
 //                .and()
 //                .csrf().disable()
 //                .headers().frameOptions().disable();

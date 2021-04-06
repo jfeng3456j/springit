@@ -26,7 +26,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Link extends Auditable {
 
     //https://www.danvega.dev/docs/spring-boot-2-docs/#_spring_mvc_model
