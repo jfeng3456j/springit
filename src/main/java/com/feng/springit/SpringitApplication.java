@@ -16,11 +16,13 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 
 //@EnableJpaAuditing
 @SpringBootApplication
 @EnableConfigurationProperties(SpringitProperies.class)
+@EnableTransactionManagement
 public class SpringitApplication {
 
 	//https://www.danvega.dev/docs/spring-boot-2-docs/#_course_details
