@@ -26,12 +26,18 @@ import java.util.List;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Link extends Auditable {
 
     //https://www.danvega.dev/docs/spring-boot-2-docs/#_spring_mvc_model
 
-    @Id @GeneratedValue
+    //    using lombok to creat this required constructor
+    //    public Link(String title, String url) {
+    //        this.title = title;
+    //        this.url = url;
+    //    };
+
+    @Id
+    @GeneratedValue
     private Long id;
 
     @NonNull
@@ -47,12 +53,11 @@ public class Link extends Auditable {
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
 
+    //vote
+    @OneToMany(mappedBy = "link")
+    private List<Vote> votes = new ArrayList<>();
 
-//    using lombok to creat this required constructor
-//    public Link(String title, String url) {
-//        this.title = title;
-//        this.url = url;
-//    };
+    private int voteCount = 0;
 
     public void addComment(Comment comment) {
         comments.add(comment);
