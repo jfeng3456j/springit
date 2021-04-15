@@ -6,10 +6,7 @@ import org.hibernate.validator.constraints.URL;
 import org.ocpsoft.prettytime.PrettyTime;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -30,7 +27,7 @@ public class Link extends Auditable {
 
     //https://www.danvega.dev/docs/spring-boot-2-docs/#_spring_mvc_model
 
-    //    using lombok to creat this required constructor
+    //    using lombok to create this required constructor
     //    public Link(String title, String url) {
     //        this.title = title;
     //        this.url = url;
@@ -58,6 +55,9 @@ public class Link extends Auditable {
     private List<Vote> votes = new ArrayList<>();
 
     private int voteCount = 0;
+
+    @ManyToOne
+    private User user;
 
     public void addComment(Comment comment) {
         comments.add(comment);
