@@ -51,7 +51,7 @@ public class MailService {
         Locale locale = Locale.ENGLISH;
         Context context = new Context(locale);
         context.setVariable("user", user);
-        context.setVariable("baseUrl", BASE_URL);
+        context.setVariable("baseURL", BASE_URL);
         String content = springTemplateEngine.process(templateName, context);
         sendMail(user.getEmail(), subject, content, false, true);
     }
@@ -59,7 +59,7 @@ public class MailService {
     @Async
     public void sendActivationEmail(User user) {
         log.debug("Sending Activation email to '{}'", user.getEmail());
-        sendMailFromTemplate(user, "email/Activation", "Springit User Activation Email");
+        sendMailFromTemplate(user, "email/activation", "Springit User Activation Email");
     }
 
     @Async
